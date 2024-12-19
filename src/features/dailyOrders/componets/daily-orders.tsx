@@ -6,6 +6,7 @@ import Label from '../../../components/atoms/Label/Label';
 import Field from '../../../components/atoms/Field/Field';
 import Dropdown from '../../../components/atoms/Dropdown/Dropdown';
 import DateCalendar from '../../../components/atoms/DateCalendar/DateCalendar';
+import Button from '../../../components/atoms/Button';
 
 const DailyOrders: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -123,6 +124,16 @@ const DailyOrders: React.FC = () => {
               minDate="2024-11-17"
               onChange={() => { }}
               value={formData.deliveryDate}
+            />
+          </Grid>
+        </Grid>
+        <Grid container mt={2}>
+          <Grid xs={6}>
+            <Button
+              label={'絞り込み'}
+              onClick={function (): void {
+                throw new Error('Function not implemented.');
+              }}
             />
           </Grid>
         </Grid>
