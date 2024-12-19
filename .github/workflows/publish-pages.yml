@@ -1,0 +1,44 @@
+name: mockuo to GitHubPages
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  cache-version: v1
+
+jobs:
+  release:
+    name: Project Build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # checkout resource
+      - name: Check out code
+        uses: actions/checkout@v4
+      # node install
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      # lib install
+      - name: Install dependencies
+        run: npm ci
+      # build static contents
+      - name: Build
+        run: npm run dev
+      # deploy 
+      - name: upload report
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: mockup-static
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
