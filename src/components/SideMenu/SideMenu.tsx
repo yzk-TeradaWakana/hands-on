@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Drawer, Toolbar } from '@mui/material';
-import { useSharedContext } from '../../../context/SharedContext';
+import { useSharedContext } from '../../context/SharedContext';
 
 const DRAWER_WIDTH = 240;
 

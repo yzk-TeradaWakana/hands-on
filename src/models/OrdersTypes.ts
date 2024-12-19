@@ -1,5 +1,3 @@
-import { MRT_RowData } from "material-react-table";
-
 export type Orders = {
   productNumber: string,
   deliveryDate: string,

@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Box, Toolbar } from "@mui/material";
-import { useSharedContext } from "../../../../context/SharedContext";
+import { useSharedContext } from "../../../context/SharedContext";
 import Header from "../../Header";
 import SideMenu from "../../SideMenu";
 import { Outlet } from "@tanstack/react-router";

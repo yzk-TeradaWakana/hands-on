@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as MockOrderEntryImport } from './routes/mock/order-entry'
 import { Route as MockDailyOrdersDetailImport } from './routes/mock/daily-orders-detail'
 import { Route as MockDailyOrdersImport } from './routes/mock/daily-orders'
 
@@ -20,6 +21,12 @@ import { Route as MockDailyOrdersImport } from './routes/mock/daily-orders'
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MockOrderEntryRoute = MockOrderEntryImport.update({
+  id: '/mock/order-entry',
+  path: '/mock/order-entry',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -60,6 +67,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MockDailyOrdersDetailImport
       parentRoute: typeof rootRoute
     }
+    '/mock/order-entry': {
+      id: '/mock/order-entry'
+      path: '/mock/order-entry'
+      fullPath: '/mock/order-entry'
+      preLoaderRoute: typeof MockOrderEntryImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -69,12 +83,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/mock/daily-orders': typeof MockDailyOrdersRoute
   '/mock/daily-orders-detail': typeof MockDailyOrdersDetailRoute
+  '/mock/order-entry': typeof MockOrderEntryRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/mock/daily-orders': typeof MockDailyOrdersRoute
   '/mock/daily-orders-detail': typeof MockDailyOrdersDetailRoute
+  '/mock/order-entry': typeof MockOrderEntryRoute
 }
 
 export interface FileRoutesById {
@@ -82,14 +98,28 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/mock/daily-orders': typeof MockDailyOrdersRoute
   '/mock/daily-orders-detail': typeof MockDailyOrdersDetailRoute
+  '/mock/order-entry': typeof MockOrderEntryRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/mock/daily-orders' | '/mock/daily-orders-detail'
+  fullPaths:
+    | '/'
+    | '/mock/daily-orders'
+    | '/mock/daily-orders-detail'
+    | '/mock/order-entry'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/mock/daily-orders' | '/mock/daily-orders-detail'
-  id: '__root__' | '/' | '/mock/daily-orders' | '/mock/daily-orders-detail'
+  to:
+    | '/'
+    | '/mock/daily-orders'
+    | '/mock/daily-orders-detail'
+    | '/mock/order-entry'
+  id:
+    | '__root__'
+    | '/'
+    | '/mock/daily-orders'
+    | '/mock/daily-orders-detail'
+    | '/mock/order-entry'
   fileRoutesById: FileRoutesById
 }
 
@@ -97,12 +127,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   MockDailyOrdersRoute: typeof MockDailyOrdersRoute
   MockDailyOrdersDetailRoute: typeof MockDailyOrdersDetailRoute
+  MockOrderEntryRoute: typeof MockOrderEntryRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   MockDailyOrdersRoute: MockDailyOrdersRoute,
   MockDailyOrdersDetailRoute: MockDailyOrdersDetailRoute,
+  MockOrderEntryRoute: MockOrderEntryRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,7 +149,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/mock/daily-orders",
-        "/mock/daily-orders-detail"
+        "/mock/daily-orders-detail",
+        "/mock/order-entry"
       ]
     },
     "/": {
@@ -128,6 +161,9 @@ export const routeTree = rootRoute
     },
     "/mock/daily-orders-detail": {
       "filePath": "mock/daily-orders-detail.tsx"
+    },
+    "/mock/order-entry": {
+      "filePath": "mock/order-entry.tsx"
     }
   }
 }

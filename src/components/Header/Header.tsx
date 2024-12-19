@@ -1,13 +1,10 @@
 import React from 'react';
-import styles from './Header.style';
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { Logout } from '@mui/icons-material';
-import { useNavigate } from '@tanstack/react-router';
 import ButtonMenu from '../ButtonMenu';
 
 const Header: React.FC<{ onToggleMenu: () => void }> = ({ onToggleMenu }) => {
   // const { signOut } = useAuthenticator();
-  const navigate = useNavigate();
 
   return (
     <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>

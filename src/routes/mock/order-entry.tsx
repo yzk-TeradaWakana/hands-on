@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import DailyOrders from '../../features/dailyOrders/componets/daily-orders';
+import OrderEntry from '../../features/orderEntry/components/order-entry'
 
-export const Route = createFileRoute('/mock/daily-orders')({
+export const Route = createFileRoute('/mock/order-entry')({
   component: RootComponent,
   staticData: { layoutType: 'layout2' },
 })
@@ -10,8 +10,7 @@ export const Route = createFileRoute('/mock/daily-orders')({
 function RootComponent() {
   return (
     <React.Fragment>
-      <DailyOrders />
+      <OrderEntry />
     </React.Fragment>
   )
 }
-

@@ -2,8 +2,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { MRT_ColumnDef, useMaterialReactTable } from 'material-react-table';
 import { useMemo } from 'react';
-import { Orders } from '../../../../models/OrdersTypes';
-import { fakeData } from '../../../../constants/OrdersDef';
+import { Orders } from '../../../models/OrdersTypes';
+import { fakeData } from '../../../constants/OrdersDef';
 import { Link } from '@mui/material';
 
 
@@ -14,8 +14,8 @@ export const makeDailyOrdersTableInstance = () => {
       {
         accessorKey: 'productNumber',
         header: '品番',
-        Cell: ({ row }) => (
-          <Link href={`/mock/daily-orders-detail`}>xxxxxxx</Link>
+        Cell: () => (
+          <Link href={`/mock/daily-orders-detail`}>0000-0000-0000</Link>
         ),
       },
       {
@@ -42,10 +42,10 @@ export const makeDailyOrdersTableInstance = () => {
     [],
   );
 
-  const sampleTable = useMaterialReactTable({
+  const dailyOrdersTable = useMaterialReactTable({
     columns,
     data: fakeData,
   });
 
-  return sampleTable;
+  return dailyOrdersTable;
 }

@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
-import { makeDailyOrdersTableInstance } from '../../common/Table/def/DailyOrdersColumns'
-import TableCommon from '../../common/Table/TableCommon';
-import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Paper, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
-import Label from '../../common/atoms/Label/Label';
-import Field from '../../common/atoms/Field/Field';
-import Dropdown from '../../common/atoms/Dropdown/Dropdown';
-import DateCalendar from '../../common/atoms/DateCalendar/DateCalendar';
+
+import { Box, Grid, SelectChangeEvent, } from '@mui/material';
+import Label from '../../../components/atoms/Label';
 
 const DailyOrdersDetail: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -36,7 +32,7 @@ const DailyOrdersDetail: React.FC = () => {
         borderPosition="left"
         variant="h5"
         textAlign='left'
-        children="品番明細"
+        children="品番・受注別　明細"
       />
     </Box>
     </>

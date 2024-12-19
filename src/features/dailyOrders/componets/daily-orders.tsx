@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { makeDailyOrdersTableInstance } from '../../common/Table/def/DailyOrdersColumns'
-import TableCommon from '../../common/Table/TableCommon';
-import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Paper, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
-import Label from '../../../components/common/atoms/Label/Label';
-import Field from '../../common/atoms/Field/Field';
-import Dropdown from '../../common/atoms/Dropdown/Dropdown';
-import DateCalendar from '../../common/atoms/DateCalendar/DateCalendar';
+import { makeDailyOrdersTableInstance } from '../../../components/Table/def/DailyOrdersColumns'
+import TableCommon from '../../../components/Table/TableCommon';
+import { Box, Grid, Paper, SelectChangeEvent } from '@mui/material';
+import Label from '../../../components/atoms/Label/Label';
+import Field from '../../../components/atoms/Field/Field';
+import Dropdown from '../../../components/atoms/Dropdown/Dropdown';
+import DateCalendar from '../../../components/atoms/DateCalendar/DateCalendar';
 
 const DailyOrders: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -36,7 +36,7 @@ const DailyOrders: React.FC = () => {
         borderPosition="left"
         variant="h5"
         textAlign='left'
-        children="受注一覧"
+        children="受注一覧（日別）"
       />
 
       {/* Input Form */}
