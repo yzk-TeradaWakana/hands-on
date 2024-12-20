@@ -1,4 +1,3 @@
-import React from 'react';
 import { MaterialReactTable,
   MRT_RowData,
   MRT_TableInstance,

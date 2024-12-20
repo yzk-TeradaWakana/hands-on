@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-
 export const styles = {
   /* Add styles here */
 }

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import styles from './ButtonMenu.style';
 import { IconButton } from '@mui/material';
 import MenuIcon from "@mui/icons-material/Menu";
 import { menuContext } from '../../store/appState';

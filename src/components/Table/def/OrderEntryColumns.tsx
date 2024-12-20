@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable react/react-in-jsx-scope */
 import { MRT_ColumnDef, MRT_Row, MRT_TableOptions, useMaterialReactTable } from 'material-react-table';
 import { useMemo, useState } from 'react';
 import {

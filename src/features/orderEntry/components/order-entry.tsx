@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { makeOrderEntryTableInstance } from '../../../components/Table/def/OrderEntryColumns'
 import TableCommon from '../../../components/Table/TableCommon';
-import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Paper, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
+import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Paper, Select, SelectChangeEvent, TextField } from '@mui/material';
+import Label from '../../../components/atoms/Label';
 
 const OrderEntry: React.FC = () => {
+  const children = "注連登録";
   const [formData, setFormData] = useState({
     orderDate: "",
     customerCode: "",
@@ -42,23 +44,29 @@ const OrderEntry: React.FC = () => {
   return (
     <><Box sx={{ p: 3 }}>
       {/* Header */}
-      <Typography variant="h5" sx={{ mb: 2 }}>注連登録</Typography>
-
+      <Label
+        borderColor="primary"
+        borderPosition="left"
+        variant="h5"
+        textAlign='left'
+      >
+        {children}
+      </Label>
       {/* Input Form */}
-      <Paper sx={{ p: 2, mb: 2 }}>
-        <Grid container spacing={2} sx={{ mt: 2 }}>
+      <Paper sx={{ p: 2, mb: 2, mt: 2 }}>
+        <Grid container spacing={2} >
           <Grid item xs={4}><TextField fullWidth name="orderDate" label="受注日" type="date" InputLabelProps={{ shrink: true }} onChange={handleInputChange} /></Grid>
           <Grid item xs={4}><FormControl fullWidth><InputLabel>得意先コード</InputLabel><Select name="customerCode" onChange={handleSelectChange}><MenuItem value={1}>コード1</MenuItem></Select></FormControl></Grid>
           <Grid item xs={4}><TextField fullWidth name="customerName" label="得意先名" value={formData.customerName} InputProps={{ readOnly: true }} /></Grid>
-          
+
           <Grid item xs={4}><TextField fullWidth name="orderNo" label="注連No" value={formData.orderNo} InputProps={{ readOnly: true }} /></Grid>
           <Grid item xs={4}><FormControl fullWidth><InputLabel>営業事業所</InputLabel><Select name="businessOffice" onChange={handleSelectChange}><MenuItem value={1}>事業所1</MenuItem></Select></FormControl></Grid>
           <Grid item xs={4}><FormControl fullWidth><InputLabel>営業部署</InputLabel><Select name="businessDept" onChange={handleSelectChange}><MenuItem value={1}>部署1</MenuItem></Select></FormControl></Grid>
-          
+
           <Grid item xs={4}><FormControl fullWidth><InputLabel>営業担当者</InputLabel><Select name="businessPerson" onChange={handleSelectChange}><MenuItem value={1}>担当者1</MenuItem></Select></FormControl></Grid>
           <Grid item xs={4}><FormControl fullWidth><InputLabel>工場</InputLabel><Select name="factory" onChange={handleSelectChange}><MenuItem value={1}>工場1</MenuItem></Select></FormControl></Grid>
           <Grid item xs={4}><FormControl fullWidth><InputLabel>工場部署</InputLabel><Select name="factoryDept" onChange={handleSelectChange}><MenuItem value={1}>工場部署1</MenuItem></Select></FormControl></Grid>
-          
+
           <Grid item xs={4}><FormControl fullWidth><InputLabel>工場担当者</InputLabel><Select name="factoryPerson" onChange={handleSelectChange}><MenuItem value={1}>担当者1</MenuItem></Select></FormControl></Grid>
           <Grid item xs={4}><TextField fullWidth name="issueDate" label="発行日" value={formData.issueDate} InputProps={{ readOnly: true }} /></Grid>
           <Grid item xs={4}></Grid>

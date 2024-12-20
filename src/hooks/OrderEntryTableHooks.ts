@@ -11,7 +11,7 @@ import { fakeData } from '../constants/OrderEntryDef';
 export const useCreateUser = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: async (user: User): Promise<void> => {
+    mutationFn: async (): Promise<void> => {
       // send api update request here
       await new Promise((resolve) => setTimeout(resolve, 1000)); // fake api call
     },
@@ -52,7 +52,7 @@ export const useGetUsers = () => {
 export const useUpdateUsers = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: async (users: User[]) => {
+    mutationFn: async () => {
       //send api update request here
       await new Promise((resolve) => setTimeout(resolve, 1000)); //fake api call
       return Promise.resolve();
@@ -74,7 +74,7 @@ export const useUpdateUsers = () => {
 export const useDeleteUser = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: async (userId: string): Promise<void> => {
+    mutationFn: async (): Promise<void> => {
       // send api update request here
       await new Promise((resolve) => setTimeout(resolve, 1000)); // fake api call
       return Promise.resolve();

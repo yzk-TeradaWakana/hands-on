@@ -1,9 +1,8 @@
-
 import { makeStyles } from "@mui/styles";
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
   root: {
     display: "flex",
     height: "100vh",

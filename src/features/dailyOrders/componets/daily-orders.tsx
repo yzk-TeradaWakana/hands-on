@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { makeDailyOrdersTableInstance } from '../../../components/Table/def/DailyOrdersColumns'
 import TableCommon from '../../../components/Table/TableCommon';
-import { Box, Grid, Paper, SelectChangeEvent } from '@mui/material';
+import { Box, Grid, Paper } from '@mui/material';
 import Label from '../../../components/atoms/Label/Label';
 import Field from '../../../components/atoms/Field/Field';
 import Dropdown from '../../../components/atoms/Dropdown/Dropdown';
@@ -9,6 +9,7 @@ import DateCalendar from '../../../components/atoms/DateCalendar/DateCalendar';
 import Button from '../../../components/atoms/Button';
 
 const DailyOrders: React.FC = () => {
+  const children = "受注一覧（日別）";
   const [formData, setFormData] = useState({
     productNumber: "XXXXXXX",
     delivery: "",
@@ -17,10 +18,10 @@ const DailyOrders: React.FC = () => {
     deliveryDate: new Date().toISOString(),
   });
 
-  const handleSelectChange = (event: SelectChangeEvent<string>) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name!]: value });
-  };
+  // const handleSelectChange = (event: SelectChangeEvent<string>) => {
+  //   const { name, value } = event.target;
+  //   setFormData({ ...formData, [name!]: value });
+  // };
 
   const handleChangeSearchParams = (key: string, value: string) => {
     setFormData(prevParams => ({
@@ -37,8 +38,9 @@ const DailyOrders: React.FC = () => {
         borderPosition="left"
         variant="h5"
         textAlign='left'
-        children="受注一覧（日別）"
-      />
+      >
+        {children}
+      </Label>
 
       {/* Input Form */}
       <Paper sx={{ p: 2, mb: 2, mt: 2 }}>

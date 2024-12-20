@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Accordion, AccordionDetails, AccordionSummary, Box, Grid, Paper, SelectChangeEvent, } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Grid, Paper } from '@mui/material';
 import Label from '../../../components/atoms/Label';
 import DateCalendar from '../../../components/atoms/DateCalendar';
 import Dropdown from '../../../components/atoms/Dropdown';
@@ -12,6 +12,7 @@ import TableCommon from '../../../components/Table/TableCommon';
 import { makeDailyOrderDetailTableInstance } from '../../../components/Table/def/DailyOrderDetailColumns';
 
 const DailyOrdersDetail: React.FC = () => {
+  const children = "品番・受注別　明細";
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     productNumber: "XXXXXXX",
@@ -22,10 +23,10 @@ const DailyOrdersDetail: React.FC = () => {
     updateReason: "",
   });
 
-  const handleSelectChange = (event: SelectChangeEvent<string>) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name!]: value });
-  };
+  // const handleSelectChange = (event: SelectChangeEvent<string>) => {
+  //   const { name, value } = event.target;
+  //   setFormData({ ...formData, [name!]: value });
+  // };
 
   const handleChangeSearchParams = (key: string, value: string) => {
     setFormData(prevParams => ({
@@ -42,8 +43,9 @@ const DailyOrdersDetail: React.FC = () => {
         borderPosition="left"
         variant="h5"
         textAlign='left'
-        children="品番・受注別　明細"
-      />
+      >
+        {children}
+      </Label>
     </Box>
       {/* body */}
       <Paper sx={{ p: 2, mb: 2 }}>
