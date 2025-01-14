@@ -5,6 +5,6 @@ on:
 
 jobs:
   practice1:
-  runs-on: ubuntu-latest
-  steps:
-    - run: echo 'Hello, GitHub Actions.'
+    runs-on: ubuntu-latest
+    steps:
+      - run: "Hello, GitHub Actions."
