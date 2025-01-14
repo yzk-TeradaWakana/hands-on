@@ -7,4 +7,4 @@ jobs:
   practice1:
     runs-on: ubuntu-latest
     steps:
-      - run: "Hello, GitHub Actions."
+      - run: echo "Hello, GitHub Actions."
