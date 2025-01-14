@@ -1,0 +1,10 @@
+name: practice1
+# イベントの手動実行
+on:
+  workflow_dispatch:
+
+jobs:
+  practice1:
+  runs-on: ubuntu-latest
+  steps:
+    - run: echo 'Hello, GitHub Actions.'
