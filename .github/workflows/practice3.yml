@@ -1,0 +1,12 @@
+name: practice3
+on:
+  push:
+    branches: main
+
+
+jobs:
+  practice3:
+    runs-on: ubuntu-latest
+    steps:
+        - name: practice3
+          run: echo 'OK'
