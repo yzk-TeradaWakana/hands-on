@@ -1,0 +1,11 @@
+name: practice4
+on:
+  schedule:
+    - cron: "3 * * * *"
+
+jobs:
+  practice4:
+    runs-on: ubuntu-latest
+    steps:
+        - name: practice4
+          run: echo 'GO'
